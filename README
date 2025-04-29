@@ -1,0 +1,45 @@
+// orderi429@gmail.com
+
+This project implements a SquareMat class for square matrices and adds a full set of arithmetic, comparison, and utility operators.
+It validates every operation (size mismatches, divide-by-zero, etc.), throws exceptions when the rules are broken, 
+and ships with a solid unit-test suite. Memory use was checked with Valgrind—no leaks.
+
+SquareMat.h / SquareMat.cpp :
+These files declare and implement the SquareMat class. A matrix is stored in a flat dynamic array (row * size + col). The code covers-
+construction , copy , assignment , destruction (Rule of Three)
+
+element access with m[i][j] and bounds checking
+
+arithmetic + - * / , Hadamard % , power ^ , transpose ~ , determinant !
+
+prefix & postfix ++ -- and compound operators like +=
+
+comparisons that use the sum of all elements.
+
+main.cpp :
+A simple demo that builds two 2×2 matrices, prints them, and runs every operator so you can see quick, readable output.
+
+tests.cpp :
+Unit tests written with the Doctest framework. They cover constructor edge cases, every operator—including exception paths—and confirm no
+silent overflows.
+
+doctest.h :
+The single-header testing framework .
+
+Makefile :
+Automates the common tasks.
+
+make – builds main demo and tests
+
+./main -  run the demo
+
+./tests – runs the unit tests
+
+make valgrind – runs tests under Valgrind for leak checks
+
+make clean – deletes generated binaries and test runners
+
+
+
+
+
